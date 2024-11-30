@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unggah Gambar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unggah Gambar</h1>
+    <form>
+        <label for="imageUpload">Pilih gambar:</label>
+        <input type="file" id="imageUpload" accept="image/*">
+    </form>
+    <p id="message">Kamu jelek wkwkwk</p>
+
+    <script>
+        const imageUpload = document.getElementById('imageUpload');
+        const message = document.getElementById('message');
+
+        imageUpload.addEventListener('change', () => {
+            if (imageUpload.files.length > 0) {
+                message.style.display = 'block';
+            } else {
+                message.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
